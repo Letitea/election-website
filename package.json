@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "prod":"ng build --configuration production --base-href /election-website/"
+    "prod":"ng build --configuration production --base-href /election-website/",
+    "githubprod":"ng build --configuration production --output-path docs --base-href /election-website/"
   },
   "private": true,
   "dependencies": {
