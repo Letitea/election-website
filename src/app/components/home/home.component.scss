@@ -1,0 +1,29 @@
+.divhover:hover{
+  background:#fafafafb;
+  border:solid 1px #fcfcfcfa;
+  border-radius: 50px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.btnhover:hover{
+  background-color:#eceaeafb !important;
+  // border:solid 1px #e6e4e4fa !important;
+  // padding: 15px;
+  cursor: pointer;
+}
+
+.news_marquee {
+  animation : slide 7s linear infinite ;
+  color:white;
+}
+
+@keyframes slide {
+  0% {
+  transform: translatex(100%)
+  }
+
+  100% {
+  transform: translatex(0%)
+  }
+}

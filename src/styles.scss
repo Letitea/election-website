@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color:#FDFCFB ; }//#FDFCFB
+@font-face {
+  font-family: Mantou Sans;
+  src: url(assets/MantouSans-Regular.ttf);
+}
+.modal-90{
+  max-width: 90% ;
+}
