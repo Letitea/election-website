@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
     }
   ]
   options: AnimationOptions = {
-    path: '/assets/loading.json',
+    path: 'assets/loading.json',
   };
   private animationItem: any;
   destroyLoading=false;
