@@ -45,21 +45,21 @@ export class SwiperComponent implements AfterViewInit {
     title:'喵的保障',
     oriDescription:'為毛孩子謀福利!推動寵物保障方案',
     description:'為毛孩子謀福利!<br>推動寵物保障方案',
-    img:'../../../assets/policy1.svg',
+    img:'assets/policy1.svg',
     detail:''
   },
   {
     title:'喵的教育',
     oriDescription:'推廣寵物飼養教育，讓愛更加專業',
     description:'推廣寵物飼養教育，<br>讓愛更加專業',
-    img:'../../../assets/policy2.svg',
+    img:'assets/policy2.svg',
     detail:''
   },
   {
     title:'喵的福利',
     oriDescription:'打造休閒天堂！推廣寵物休閒與娛樂場所',
     description:'打造休閒天堂！<br>推廣寵物休閒與娛樂場所',
-    img:'../../../assets/policy3.svg',
+    img:'assets/policy3.svg',
     detail:''
   }
 ]
