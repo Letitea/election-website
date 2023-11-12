@@ -62,17 +62,17 @@ export class HomeComponent implements OnInit,AfterViewInit {
     this.animationItem = animationItem;
   }
   showNewActiveModal(index:number){
-    const modalRef = this.modalService.open(NewActiveModalComponent,{scrollable: true,fullscreen:'sm',size:'90'});
+    const modalRef = this.modalService.open(NewActiveModalComponent,{scrollable: true,fullscreen:'xs',size:'90'});
     modalRef.componentInstance.newActive = {
       index:index,
       data:this.newActive
     };
   }
   showDonateModal(){
-    const modalRef = this.modalService.open(DonateModalComponent,{scrollable: true,fullscreen:'sm',size:'90'});
+    const modalRef = this.modalService.open(DonateModalComponent,{scrollable: true,fullscreen:'xs',size:'90'});
   }
   showEmailModal(){
-    const modalRef = this.modalService.open(EmailModalComponent,{scrollable: true,fullscreen:'sm',size:'90'});
+    const modalRef = this.modalService.open(EmailModalComponent,{scrollable: true,fullscreen:'xs',size:'90'});
   }
 
 }

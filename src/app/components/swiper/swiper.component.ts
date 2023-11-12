@@ -78,7 +78,7 @@ export class SwiperComponent implements AfterViewInit {
     this.index = swiper.detail[0].activeIndex;
   }
   openModal(index:number){
-    const modalRef = this.modalService.open(PolicyModalComponent,{scrollable: true,fullscreen:'sm',size:'90'});
+    const modalRef = this.modalService.open(PolicyModalComponent,{scrollable: true,fullscreen:'xs',size:'90'});
     modalRef.componentInstance.policy = {
       index:index,
       data:this.data
