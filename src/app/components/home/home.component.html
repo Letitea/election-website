@@ -1,17 +1,19 @@
 <ng-lottie [hidden]="destroyLoading" [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
-<div class="fixed-top" [hidden]="!destroyLoading" style="background-color: #FDFCFB;padding: 10px;width: 100vw;">
+<div ngClass.gt-xs="fixed-top" [hidden]="!destroyLoading" style="background-color: #FDFCFB;padding: 10px;width: 100vw;">
   <nav class="navbar navbar-expand navbar-light bg-white" style="border-radius: 16px;">
     <div fxLayout="row" class="container-fluid">
-      <div class="collapse navbar-collapse justify-content-start" style="padding-left: 10px;">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <div fxFlex fxLayoutAlign="start center" style="padding-left: 10px;">
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
-        <img src="assets/home.svg">
-        <a class="navbar-brand" href="#" style="font-size: 24px;font-weight: 700;color: #DA7D4A;padding-left: 10px;">喵立翰 Miao Li-Han</a>
+        </button> -->
+        <img fxHide fxShow.gt-xs style="width: 52.17px;height: 43px;" src="assets/home.svg">
+        <a fxHide fxShow.gt-xs class="navbar-brand" href="#" style="font-size: 24px;font-weight: 700;color: #DA7D4A;padding-left: 10px;">喵立翰 Miao Li-Han</a>
+        <img fxHide fxShow.xs style="width: 34px;height: 28px;" src="assets/home.svg">
+        <a fxHide fxShow.xs class="navbar-brand" href="#" style="font-size: 20px;font-weight: 700;color: #DA7D4A;padding-left: 10px;">喵立翰 Miao Li-Han</a>
       </div>
 
 
-      <div fxHide fxShow.gt-sm class="justify-content-center align-content-center" id="navbarTogglerDemo03">
+      <div fxHide fxShow.gt-sm fxFlex fxLayoutAlign="center center" id="navbarTogglerDemo03">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#advocate">候選人主張</a>
@@ -30,7 +32,7 @@
           </li>
         </ul>
       </div>
-      <div class="collapse navbar-collapse justify-content-right justify-content-end">
+      <div fxHide fxShow.gt-xs fxFlex fxLayoutAlign="end center">
         <i class="bi bi-facebook" style="font-size: 2rem; color: #DA7D4A; padding-right: 16px;"></i>
         <i class="bi bi-instagram" style="font-size: 2rem; color: #DA7D4A; padding-right: 16px;"></i>
         <i class="bi bi-youtube" style="font-size: 2rem; color:#DA7D4A;padding-right: 16px;"></i>
@@ -41,11 +43,11 @@
 
 
 <div [hidden]="!destroyLoading" fxLayout="column" class="bg-white">
-  <div fxFlex fxLayoutAlign="center center" style="padding-top: 130px;">
+  <div fxFlex fxLayoutAlign="center center" ngClass.gt-xs="paddint-top-130" ngClass.xs="paddint-top-40">
     <p fxHide fxShow.gt-sm style="font-family:Mantou Sans;font-weight: 400;font-size: 96px; line-height: 100.8px; -webkit-background-clip: text; color: transparent;background-image: linear-gradient(45deg, #E5793B, #FF4185 80%);">
       台灣的明天 喵先鋪路
     </p>
-    <div fxHide fxShow.sm fxLayout="column" fxLayoutAlign="center center">
+    <div fxHide fxShow.lt-md fxLayout="column" fxLayoutAlign="center center">
       <div style="font-family:Mantou Sans;font-weight: 400;font-size: 52px; line-height:54.6px; -webkit-background-clip: text; color: transparent;background-image: linear-gradient(45deg, #E5793B, #FF4185 80%);">
         台灣的明天
       </div>
@@ -55,15 +57,15 @@
     </div>
   </div>
 
-  <div fxFlex fxLayoutAlign="center center" style="padding-top: 20px;">
+  <div fxFlex fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutGap.xs="20px" fxLayoutAlign="center center" style="padding-top: 20px;">
     <div fxHide fxShow.gt-sm fxLayoutAlign="center center" style="background-color: #334155;color: white;border-radius: 16px;width:252px;height: 66px;font-weight: 700;font-size: 28px;line-height: 42px;">2024 立委參選人</div>
-    <div fxHide fxShow.sm fxLayoutAlign="center center" style="background-color: #334155;color: white;border-radius: 16px;padding: 12px 16px 12px 16px;height: 66px;font-weight: 700;font-size: 20px;line-height: 30px;">2024 立委參選人</div>
+    <div fxHide fxShow.lt-md fxLayoutAlign="center center" style="background-color: #334155;color: white;border-radius: 16px;padding: 12px 16px 12px 16px;height: 66px;font-weight: 700;font-size: 20px;line-height: 30px;">2024 立委參選人</div>
 
     <div fxHide fxShow.gt-sm fxLayoutAlign="center center" fxLayout="row" style="margin-left: 15px; padding: 12px 16px 12px 16px ;border-radius: 16px;border:1px white;color: white;box-shadow:0 4px 12px 0px #A3B4CB">
       <img style="width: 50px;height: 50px;" src="assets/number.svg">
       <div style="font-weight: 700;font-size: 40px;line-height: 60px;color: #DA7D4A;">喵立翰 Miao Li-Han</div>
     </div>
-    <div fxHide fxShow.sm fxLayoutAlign="center center" fxLayout="row" style="margin-left: 10px; padding: 12px 16px 12px 16px ;border-radius: 16px;border:1px white;color: white;box-shadow:0 4px 12px 0px #A3B4CB">
+    <div fxHide fxShow.lt-md fxLayoutAlign="center center" fxLayout="row" style="margin-left: 10px; padding: 12px 16px 12px 16px ;border-radius: 16px;border:1px white;color: white;box-shadow:0 4px 12px 0px #A3B4CB">
       <img style="width: 39.83px;height: 39.83px;" src="assets/number.svg">
       <div style="font-weight: 700;font-size: 28px;line-height: 42px;color: #DA7D4A;">喵立翰 Miao Li-Han</div>
     </div>
@@ -75,11 +77,14 @@
   <div fxHide fxShow.sm fxFlex fxLayoutAlign="center center" style="padding-top: 20px;border: 0;">
     <img style="height: 254.82px;width: 343px;" src="assets/people.svg">
   </div>
+  <div fxHide fxShow.xs fxFlex fxLayoutAlign="center center" style="padding-top: 20px;border: 0;">
+    <img style="height: 255px;width:327px;" src="assets/people.svg">
+  </div>
 
   <div fxHide fxShow.gt-sm fxLayout="row" style="background-color: #DA7D4A;width: 100%;height: 87px;border: 0;padding:10px;overflow: hidden;">
     <marquee direction="left" scrollamount="8" style="font-family: Mantou Sans;font-weight: 400;font-size: 64px; line-height: 67px;color:white;overflow: scroll;white-space:nowrap;width: 100%;height: 100%;">為喵星人，護台灣!&nbsp; &nbsp; &nbsp;從喵的眼中，看見台灣&nbsp;&nbsp;&nbsp;喵的未來，人的希望</marquee>
   </div>
-  <div fxHide fxShow.sm fxLayout="row" style="background-color: #DA7D4A;width: 100%;height: 62px;border: 0;padding:10px;overflow: hidden;">
+  <div fxHide fxShow.lt-md fxLayout="row" style="background-color: #DA7D4A;width: 100%;height: 62px;border: 0;padding:10px;overflow: hidden;">
     <marquee direction="left" scrollamount="8" style="font-family: Mantou Sans;font-weight: 400;font-size: 40px; line-height: 42px;color:white;overflow: scroll;white-space:nowrap;width: 100%;height: 100%;">為喵星人，護台灣!&nbsp; &nbsp; &nbsp;從喵的眼中，看見台灣&nbsp;&nbsp;&nbsp;喵的未來，人的希望</marquee>
   </div>
 </div>
@@ -122,13 +127,36 @@
         </p>
 
       </div>
-      <p style="font-weight: 700; font-size: 24px;line-height: 36px; color: #334155;">我堅信!藉由推動更完善的<span style="font-weight: 700; font-size: 28px;line-height: 42px; color: #DA7D4A;">貓咪福利</span>和相關政策，更是間接地投資於<span style="font-weight: 700; font-size: 28px;line-height: 42px; color: #DA7D4A;">台灣的未來</span>。</p>
+      <p style="font-weight: 700; font-size: 24px;line-height: 36px; color: #334155;">我堅信!藉由推動更完善的<span style="font-weight: 700; font-size: 24px;line-height: 36px; color: #DA7D4A;">貓咪福利</span>和相關政策，更是間接地投資於<span style="font-weight: 700; font-size: 24px;line-height: 36px; color: #DA7D4A;">台灣的未來</span>。</p>
       <p style="font-weight: 400; font-size: 16px;line-height: 24px;color:#334155;padding-top: 15px;">畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。</p>
       <p style="font-weight: 400; font-size: 16px;line-height: 24px;color:#334155;">
         因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
       </p>
     </div>
     <img style="border-radius: 0 0 32px 32px;width: 696px;height: 514px;object-fit: cover;" src="assets/people-house.svg">
+  </div>
+</div>
+<div fxHide fxShow.xs id="advocate1" [hidden]="!destroyLoading" style="padding-top: 40px;padding-bottom: 40px; width: 100%;"  fxLayoutAlign="center center">
+  <div fxLayout="column" style="width: 343px;border-radius: 32px; background-color: white;">
+    <div fxFlexFill fxLayoutAlign="center center" fxLayout="column" style="border-radius: 32px 0 0 32px ;padding: 40px 24px 40px 24px;">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div fxLayoutAlign="center center" style="background-color: #334155;width: 114px;height: 40px;border-radius: 8px;padding: 8px 12px 8px 12px">
+          <div style="width: 90px;height: 24px;font-weight: 700;font-size: 16px;line-height: 24px;color: white; ">
+            ADVOCATE
+          </div>
+        </div>
+        <p style="font-family:Mantou Sans;font-weight: 400;font-size: 52px; line-height: 75.3px; -webkit-background-clip: text; color: transparent;background-image: linear-gradient(45deg, #E5793B, #FF4185 80%);">
+          候選人主張
+        </p>
+
+      </div>
+      <p style="font-weight: 700; font-size: 24px;line-height: 36px; color: #334155;padding-top: 15px;">我堅信!藉由推動更完善的<span style="font-weight: 700; font-size: 24px;line-height: 36px; color: #DA7D4A;">貓咪福利</span>和相關政策，更是間接地投資於<span style="font-weight: 700; font-size: 24px;line-height: 36px; color: #DA7D4A;">台灣的未來</span>。</p>
+      <p style="font-weight: 400; font-size: 16px;line-height: 24px;color:#334155;padding-top: 15px;">畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。</p>
+      <p style="font-weight: 400; font-size: 16px;line-height: 24px;color:#334155;">
+        因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。
+      </p>
+    </div>
+    <img style="border-radius: 0 0 32px 32px;width: 343px;height: 244.55px;object-fit: cover;" src="assets/people-house.svg">
   </div>
 </div>
 
@@ -233,6 +261,61 @@
             <p style="color:#E2E8F0;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[2].date}}</p>
             <p style="color:#334155;font-weight: 700;font-size: 20px;line-height: 30px;">{{newActive[2].title}}</p>
             <p style="color:#334155;font-weight: 400;font-size: 16px;line-height: 24px;">{{newActive[2].describe}}</p>
+          </div>
+        </div>
+        <div fxLayout="row" style="padding-top: 20px;">
+          <div fxLayout="row" class="btnhover" fxLayoutAlign="center center" style="border-radius: 500px;border: 1px #F1F5F9; background-color: #F1F5F9;padding: 16px 24px 16px 24px;">
+            <div style="font-weight: 600;font-size: 16px;line-height: 19.36px;">查看更多 </div>
+            <i class="bi bi-arrow-right" style="font-size: 32px;color:#334155;padding-left: 10px;"></i>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+<div fxHide fxShow.xs id="newActive1" [hidden]="!destroyLoading" style="padding-top: 60px;padding-bottom: 60px; width: 100%; background-color: white;" fxLayoutAlign="center center">
+  <div fxFlexFill fxLayout="column" fxLayoutAlign="center center" style="padding: 0 16px 0 16px;">
+    <div fxLayoutAlign="center center" style="background-color: #334155;height: 40px;border-radius: 8px;padding: 8px 12px 8px 12px">
+      <div style="font-weight: 700;font-size: 16px;line-height: 24px;color: white; ">
+        LATEST EVENTS
+      </div>
+    </div>
+    <p style="font-family:Mantou Sans;font-weight: 400;font-size: 52px; line-height: 75.3px; -webkit-background-clip: text; color: transparent;background-image: linear-gradient(45deg, #E5793B, #FF4185 80%);">
+      最新活動
+    </p>
+
+      <div fxLayout="column" fxFlexFill style="margin: 10px;" class="divhover" (click)="showNewActiveModal(2)">
+        <img style="border-radius: 16px;width: 343px;height: 241px;object-fit: cover;" [src]="newActive[2].img">
+        <div fxLayout="column" style="padding-top: 20px;">
+          <p style="color:#E2E8F0;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[2].date}}</p>
+          <p style="color:#334155;font-weight: 700;font-size: 20px;line-height: 30px;">{{newActive[2].title}}</p>
+          <p style="color:#334155;font-weight: 400;font-size: 16px;line-height: 24px;">{{newActive[2].describe}}</p>
+        </div>
+
+      </div>
+      <div fxLayout="column" fxFlexFill style="margin: 10px;padding-top: 20px;">
+        <div fxLayout="row" class="divhover" (click)="showNewActiveModal(0)">
+          <img style="border-radius: 8px;width: 109px;height: 128px;object-fit: cover;" [src]="newActive[0].img">
+          <div fxLayout="column" style="padding-left: 20px;">
+            <p style="color:#E2E8F0;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[0].date}}</p>
+            <p style="color:#334155;font-weight: 700;font-size: 16px;line-height: 24px;">{{newActive[0].title}}</p>
+            <p class="over2" style="color:#334155;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[0].describe}}</p>
+          </div>
+        </div>
+        <div fxLayout="row" style="padding-top: 20px;" class="divhover" (click)="showNewActiveModal(1)">
+          <img style="border-radius: 8px;width: 109px;height: 128px;object-fit: cover;" [src]="newActive[1].img">
+          <div fxLayout="column" style="padding-left: 20px;">
+            <p style="color:#E2E8F0;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[1].date}}</p>
+            <p style="color:#334155;font-weight: 700;font-size: 16px;line-height: 24px;">{{newActive[1].title}}</p>
+            <p class="over2" style="color:#334155;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[1].describe}}</p>
+          </div>
+        </div>
+        <div fxLayout="row" style="padding-top: 20px;" class="divhover" (click)="showNewActiveModal(2)">
+          <img style="border-radius: 8px;width: 109px;height: 128px;object-fit: cover;" [src]="newActive[2].img">
+          <div fxLayout="column" style="padding-left: 20px;">
+            <p style="color:#E2E8F0;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[2].date}}</p>
+            <p style="color:#334155;font-weight: 700;font-size: 16px;line-height: 24px;">{{newActive[2].title}}</p>
+            <p class="over2" style="color:#334155;font-weight: 400;font-size: 14px;line-height: 21px;">{{newActive[2].describe}}</p>
           </div>
         </div>
         <div fxLayout="row" style="padding-top: 20px;">
@@ -405,7 +488,7 @@
 </div>
 
 <!-- footer -->
-<div [hidden]="!destroyLoading" style="padding-top: 50px;padding-bottom: 50px; width: 100%;" fxLayoutAlign="center center">
+<div fxHide fxShow.gt-xs [hidden]="!destroyLoading" style="padding-top: 50px;padding-bottom: 50px; width: 100%;" fxLayoutAlign="center center">
   <div fxLayout="row wrap" fxLayoutAlign="center center">
     <div fxFlex.gt-sm="50%" fxFlex.sm="85%" style="width: 676px;">
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
@@ -428,6 +511,40 @@
       </div>
     </div>
     <div fxFlex.gt-sm="50%" fxFlex.sm="85%" style="width: 676px;">
+      <div fxLayout="column" >
+        <div fxHide fxShow.gt-sm style="font-weight: 700;font-size: 24px;line-height: 36px;color: #334155;">競選總部</div>
+        <div fxHide fxShow.sm style="font-weight: 700;font-size: 24px;line-height: 36px;color: #334155;padding-top: 30px;">競選總部</div>
+        <div style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">辦公室地址：喵星區，毛茸茸大道88號，喵喵大樓3樓</div>
+        <div style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;">電話：(02) 888-5678</div>
+        <div style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;">電子郵件地址：meowoffice@linmeow.tw</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div fxHide fxShow.xs [hidden]="!destroyLoading" style="padding-top: 40px;padding-bottom: 40px; width: 100%;" fxLayoutAlign="center center">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div fxFlex.xl="85%" style="width: 343px;">
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center">
+        <img style="width: 32px;height: 32px;" src="assets/number.svg">
+        <div style="font-weight: 700;font-size: 28px;line-height: 42px;color: #DA7D4A;">喵立翰 Miao Li-Han</div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="2px" >
+        <div fxLayoutAlign="center center" style="width: 48px; height: 48px;border-radius: 500px;background-color: white;">
+          <i class="bi bi-facebook" style="font-size: 28px; color: #DA7D4A;"></i>
+        </div>
+        <div fxLayoutAlign="center center" style="width: 48px; height: 48px;border-radius: 500px;background-color: white;">
+          <i class="bi bi-instagram" style="font-size: 28px; color: #DA7D4A;"></i>
+        </div>
+        <div fxLayoutAlign="center center" style="width: 48px; height: 48px;border-radius: 500px;background-color: white;">
+          <i class="bi bi-youtube" style="font-size: 28px; color:#DA7D4A;"></i>
+        </div>
+      </div>
+      <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #334155;padding-top: 10px;">
+        © 2023 喵立翰 Miao Li-Han 版權所有
+      </div>
+    </div>
+    <div fxFlex.xl="85%" style="width: 343px;">
       <div fxLayout="column" >
         <div fxHide fxShow.gt-sm style="font-weight: 700;font-size: 24px;line-height: 36px;color: #334155;">競選總部</div>
         <div fxHide fxShow.sm style="font-weight: 700;font-size: 24px;line-height: 36px;color: #334155;padding-top: 30px;">競選總部</div>
