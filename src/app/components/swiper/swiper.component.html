@@ -1,42 +1,6 @@
-<!-- <div class="container-fluid">
-  <div class="row">
-    <main class="col-8 px-0">
-
-
-      <swiper-container appSwiper #swiper [config]="swiperConfig" thumbs-swiper=".mySwiper2" (slidechange)="slideChange($event)">
-        <swiper-slide *ngFor="let item of contents">
-          <div class="ratio ratio-4x3" [ngStyle]="{background: 'url(' + item.url +') no-repeat top center / contain'}"></div>
-        </swiper-slide>
-      </swiper-container>
-
-
-      <swiper-container appSwiper #swiperThumbs [config]="swiperThumbsConfig" class="mySwiper2" *ngIf="contents.length > 1">
-        <swiper-slide *ngFor="let item of contents">
-          <div class="ratio ratio-4x3" role="button" [ngStyle]="{background: 'url(' + item.url +') center / cover'}"></div>
-        </swiper-slide>
-      </swiper-container>
-
-
-    </main>
-
-    <aside class="col-4 p-4">
-
-      <h3 [textContent]="contents[index].title"></h3>
-      <p [textContent]="contents[index].description"></p>
-
-    </aside>
-
-  </div>
-</div> -->
-
-
-<swiper-container effect="coverflow" appSwiper #swiper [config]="swiperConfig2">
-  <!-- <slot *ngFor="let item of contents">
-    <img [src]="item.url" />
-    {{item.description}}
-  </slot> -->
-  <swiper-slide *ngFor="let d of data;let i=index">
-    <div fxLayout="row" style="width: 792px; height: 403px; border-radius: 32px; padding: 32px; background-color: white;">
+<swiper-container effect="coverflow" appSwiper #swiper [config]="swiperConfig2" (slidechange)="slideChange($event)">
+  <swiper-slide #swiperSlide *ngFor="let d of data;let i=index">
+    <div fxHide fxShow.gt-sm fxLayout="row" style="width: 792px; height: 403px; border-radius: 32px; padding: 32px; background-color: white;">
       <img fxFlex="60%" style="border-radius: 24px; width: 428px;height: 339px;" [src]="d.img">
       <div fxLayout="column" fxLayoutAlign="center start" style="padding-left: 30px;">
         <div style="border-radius: 500px;padding: 4px 12px 4px 12px;background-color: #F7ECE1;">
@@ -49,88 +13,20 @@
         </div>
       </div>
     </div>
-  </swiper-slide>
 
-
-
-  <!-- <swiper-slide>
-    <div fxLayout="row" style="width: 792px; height: 403px; border-radius: 32px; padding: 32px; background-color: white;">
-      <img fxFlex="60%" style="border-radius: 24px; width: 428px;height: 339px;" src="assets/policy1.svg">
-      <div fxLayout="column" fxLayoutAlign="center start" style="padding-left: 30px;">
+    <div fxHide fxShow.sm fxLayout="row wrap" fxLayoutAlign="center center" style="width: 400px; height: 360px; border-radius: 32px; padding: 32px; background-color: white;">
+      <img fxFlex="100%" style="border-radius: 24px; width: 400px;height: 200px;object-fit: cover;" [src]="d.img">
+      <div fxFlex="100%" fxLayout="column" fxLayoutAlign="start start" style=" padding-top: 10px;">
         <div style="border-radius: 500px;padding: 4px 12px 4px 12px;background-color: #F7ECE1;">
-          <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #343F50;">喵的保障</div>
+          <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #343F50;">{{d.title}}</div>
         </div>
-        <div style="font-weight: 700;font-size: 24px; line-height: 36px; color: #334155;padding-top: 20px;">為毛孩子謀福利!<br>推動寵物保障方案</div>
-        <div style="height: 64px;border-radius: 500px;border: 1px #DA7D4A; padding: 16px 24px 16px 24px;background-color: #DA7D4A;margin-top: 40px;cursor: pointer;" fxLayout="row" fxLayoutAlign="center start">
-          <div style="font-weight: 700;font-size: 16px;line-height: 32px; color:white">查看</div>
-          <i class="bi bi-arrow-right" style="font-size: 32px;color:white;padding-left: 10px;font-weight: 400; "></i>
-        </div>
-      </div>
-    </div>
-  </swiper-slide>
-  <swiper-slide>
-    <div fxLayout="row" style="width: 792px; height: 403px; border-radius: 32px; padding: 32px; background-color: white;">
-      <img fxFlex="60%" style="border-radius: 24px; width: 428px;height: 339px;" src="assets/policy2.svg">
-      <div fxLayout="column" fxLayoutAlign="center start" style="padding-left: 30px;">
-        <div style="border-radius: 500px;padding: 4px 12px 4px 12px;background-color: #FFDDDD;">
-          <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #343F50;">喵的教育</div>
-        </div>
-        <div style="font-weight: 700;font-size: 24px; line-height: 36px; color: #334155;padding-top: 20px;">推廣寵物飼養教育，<br>讓愛更加專業</div>
-        <div style="height: 64px;border-radius: 500px;border: 1px #DA7D4A; padding: 16px 24px 16px 24px;background-color: #DA7D4A;margin-top: 40px;cursor: pointer;" fxLayout="row" fxLayoutAlign="center start">
-          <div style="font-weight: 700;font-size: 16px;line-height: 32px; color:white">查看</div>
-          <i class="bi bi-arrow-right" style="font-size: 32px;color:white;padding-left: 10px;font-weight: 400; "></i>
+        <div style="font-weight: 700;font-size: 16px; line-height: 24px; color: #334155;padding-top: 10px;" [innerHTML]="d.description"></div>
+        <div class="btnhover" fxLayoutAlign="center center" (click)="openModal(i)" style="border-radius: 500px;border: 1px #DA7D4A; padding: 10px 16px 10px 16px;background-color: #DA7D4A;margin-top: 10px;" fxLayout="row" fxLayoutAlign="center start">
+          <div style="font-weight: 700;font-size: 16px;line-height: 24px; color:white">查看</div>
+          <i class="bi bi-arrow-right" style="font-size: 16px;line-height: 24px;color:white;padding-left: 10px;font-weight: 400; "></i>
         </div>
       </div>
     </div>
   </swiper-slide>
-  <swiper-slide>
-    <div fxLayout="row" style="width: 792px; height: 403px; border-radius: 32px; padding: 32px; background-color: white;">
-      <img fxFlex="60%" style="border-radius: 24px; width: 428px;height: 339px;" src="assets/policy3.svg">
-      <div fxLayout="column" fxLayoutAlign="center start" style="padding-left: 30px;">
-        <div style="border-radius: 500px;padding: 4px 12px 4px 12px;background-color: #BEEADB;">
-          <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #343F50;">喵的福利</div>
-        </div>
-        <div style="font-weight: 700;font-size: 24px; line-height: 36px; color: #334155;padding-top: 20px;">打造休閒天堂！<br>推廣寵物休閒與娛樂場所</div>
-        <div style="height: 64px;border-radius: 500px;border: 1px #DA7D4A; padding: 16px 24px 16px 24px;background-color: #DA7D4A;margin-top: 40px;cursor: pointer;" fxLayout="row" fxLayoutAlign="center start">
-          <div style="font-weight: 700;font-size: 16px;line-height: 32px; color:white">查看</div>
-          <i class="bi bi-arrow-right" style="font-size: 32px;color:white;padding-left: 10px;font-weight: 400; "></i>
-        </div>
-      </div>
-    </div>
-  </swiper-slide> -->
-  		<!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
-  <!-- <div [slot]="'slide-'+(i)" class="slide-content" *ngFor="let item of contents;let i=index">
-    <img class="slide-image" c />
-    <div class="slide-title">{{item.title}}</div>
-  </div> -->
-
-  <!-- <swiper-wrapper>
-    <swiper-slide *ngFor="let item of contents">
-      <img [src]="item.url" />
-      {{item.description}}
-    </swiper-slide>
-  </swiper-wrapper> -->
-  <!-- <div class="swiper-wrapper">
-    <div class="swiper-slide" *ngFor="let item of contents">
-      <img [src]="item.url" />
-      {{item.description}}
-    </div>
-  </div> -->
-  <!-- <swiper-slide *ngFor="let item of contents">
-    <div class="ratio ratio-4x3" role="button" [ngStyle]="{background: 'url(' + item.url +') center / cover'}"></div>
-  </swiper-slide> -->
-  <!-- <swiper-wrapper>
-
-  </swiper-wrapper> -->
-
+  <div class="swiper-pagination"></div>
 </swiper-container>
-
-<!-- <swiper-container effect="coverflow" style="height: 500px;">
-
-  <div slot="slide-0" class="slide-content" *ngFor="let item of contents">
-
-    <img class="slide-image" [src]="item.url" />
-    <div class="slide-title">{{item.description}}</div>
-  </div>
-</swiper-container> -->

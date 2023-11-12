@@ -1,9 +1,8 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SwiperCard } from 'src/app/models/Swiper-Card';
-import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { PolicyModalComponent } from '../policyModal/policyModal.component';
+import { SwiperContainer } from 'swiper/element';
 
 @Component({
   selector: 'app-swiper',
@@ -11,35 +10,8 @@ import { PolicyModalComponent } from '../policyModal/policyModal.component';
   styleUrls: ['./swiper.component.scss']
 })
 export class SwiperComponent implements AfterViewInit {
-
   @ViewChild('swiper') swiper!: ElementRef<SwiperContainer>;
-  @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
-
-  // contents: SwiperCard[] = [
-  //   {
-  //     title: 'Computer',
-  //     description: 'Description about computer...',
-  //     url: 'https://picsum.photos/id/1/640/480',
-  //   },
-  //   {
-  //     title: 'Building',
-  //     description: 'Building description...',
-  //     url: 'https://picsum.photos/id/101/640/480',
-  //   }, {
-  //     title: 'Glass over a computer',
-  //     description: 'Description of a glass over a computer',
-  //     url: 'https://picsum.photos/id/201/640/480',
-  //   }, {
-  //     title: 'Autumn',
-  //     description: 'Description about autumn leaves',
-  //     url: 'https://picsum.photos/id/301/640/480',
-  //   }, {
-  //     title: 'Balloon',
-  //     description: 'Coloured balloon',
-  //     url: 'https://picsum.photos/id/401/640/480',
-  //   },
-  // ];
-
+  // @ViewChild('swiperThumbs') swiperThumbs!: ElementRef<SwiperContainer>;
   data=[
   {
     title:'喵的保障',
@@ -63,33 +35,21 @@ export class SwiperComponent implements AfterViewInit {
     detail:''
   }
 ]
-  index = 0;
-
-  // Swiper
-  swiperConfig: SwiperOptions = {
-    spaceBetween: 10,
-    navigation: true,
-  }
-
-  swiperThumbsConfig: SwiperOptions = {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-  }
-
+  index = 1;
 
   swiperConfig2: SwiperOptions = {
-    autoplay: {
-      delay: 600,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 600,
+    //   disableOnInteraction: false
+    // },
     speed: 800,
     loop: true,
     effect: 'coverflow',
     grabCursor: true,
     slidesPerView: 2,
-    initialSlide: 1,
+    // initialSlide: 1,
+    // cssMode:false,
+    // navigation:true,
     spaceBetween:40,
     centeredSlides: true,
     coverflowEffect: {
@@ -97,21 +57,25 @@ export class SwiperComponent implements AfterViewInit {
       stretch: 0,
       depth: 150,
       modifier: 2,
-      slideShadows : true
+      slideShadows : false
     },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
   };
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal,private changeDetectorRef: ChangeDetectorRef) { }
+
   ngAfterViewInit() {
     // this.swiper.nativeElement.swiper.activeIndex = this.index;
+    this.swiper.nativeElement.swiper.slideNext();
+    // this.changeDetectorRef.detectChanges();
+    // this.swiper.nativeElement.swiper.set
     // this.swiperThumbs.nativeElement.swiper.activeIndex = this.index;
   }
 
   slideChange(swiper: any) {
-    // this.index = swiper.detail[0].activeIndex;
+    this.index = swiper.detail[0].activeIndex;
   }
   openModal(index:number){
     const modalRef = this.modalService.open(PolicyModalComponent,{scrollable: true,fullscreen:'sm',size:'90'});
