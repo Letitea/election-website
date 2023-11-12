@@ -16,7 +16,7 @@
     </div>
   </div>
   <div fxFlexFill class="modal-body">
-    <div fxFlexFill fxLayout="row wrap" style="padding: 0 15px 0 15px;" fxLayoutGap="30px">
+    <div fxHide fxShow.gt-xs fxFlexFill fxLayout="row wrap" style="padding: 0 15px 0 15px;" fxLayoutGap="30px">
       <div fxLayout="column" fxFlex="none" fxLayoutAlign="start start" fxLayoutGap="10px">
         <img style="border-radius: 24px;height: 318px;" [src]="newActive.data[newActive.index].img">
         <div style="font-weight: 400; font-size: 14px;line-height: 21px;color: #334155;">{{newActive.data[newActive.index].title}}</div>
@@ -43,6 +43,41 @@
               <div fxLayout="row" *ngIf="i!==newActive.index">
                 <div fxLayout="column" style="width: 244.33px;" fxFlex="none" fxLayoutAlign="start start">
                   <img style="border-radius: 8px;height: 134px;width: 244.33px;object-fit: cover;" [src]="newActive.data[i].img">
+                  <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">{{newActive.data[i].title}}</div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxHide fxShow.xs fxFlexFill fxLayout="row wrap">
+      <div fxLayout="column" fxFlex="none" fxLayoutAlign="start start" fxLayoutGap="10px">
+        <img style="border-radius: 24px;width: 343px; height: 251px;object-fit: cover;" [src]="newActive.data[newActive.index].img">
+        <div style="font-weight: 400; font-size: 14px;line-height: 21px;color: #334155;">{{newActive.data[newActive.index].title}}</div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;padding-right: 16px;">分享</div>
+          <i class="bi bi-facebook" style="font-size: 28px; color: #DA7D4A; padding-right: 16px;"></i>
+          <i class="bi bi-instagram" style="font-size: 28px; color: #DA7D4A; padding-right: 16px;"></i>
+          <i class="bi bi-line" style="font-size: 28px; color:#DA7D4A;padding-right: 16px;"></i>
+          <i class="bi bi-twitter" style="font-size: 28px; color:#DA7D4A;padding-right: 16px;"></i>
+        </div>
+      </div>
+      <div fxLayout="column" style="width: 100%;" fxLayoutAlign="start start">
+        <div style="font-weight: 700;font-size: 24px;line-height: 36px;color: #DA7D4A;">{{newActive.data[newActive.index].title}}</div>
+        <div style="font-weight: 400;font-size: 14px; line-height: 21px;color: #94A3B8;">
+          {{newActive.data[newActive.index].date}}
+        </div>
+        <div [innerHTML]="newActive.data[newActive.index].detail" style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;padding-top: 30px;padding-bottom: 30px;">
+        </div>
+        <div fxLayout="column" style="width: 100%; height: 261px; border-radius: 12px; padding: 16px; background-color: #F8FAFC;">
+
+          <div style="font-weight: 600;font-size: 16px;line-height: 19.36px;color: #334155;">更多活動</div>
+          <div fxLayout="column" fxFlex fxLayoutGap="20px" style="padding-top: 10px;">
+            <ng-container *ngFor="let data of newActive.data;let i=index">
+              <div fxLayout="row" *ngIf="i!==newActive.index">
+                <div fxLayout="row" style="width:100%;" fxLayoutGap="10px" fxFlex="none" fxLayoutAlign="start start">
+                  <img style="border-radius: 8px;height: 110px;width: 150px;object-fit: cover;" [src]="newActive.data[i].img">
                   <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">{{newActive.data[i].title}}</div>
                 </div>
               </div>

@@ -10,6 +10,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-c
   font-family: Mantou Sans;
   src: url(assets/MantouSans-Regular.ttf);
 }
-.modal-90{
-  max-width: 90% ;
+@media screen and (max-width:599px) {
+  .modal-90{
+    max-width: 100% ;
+  }
 }
+@media screen and (min-width:600px) {
+  .modal-90{
+    max-width: 90% ;
+  }
+}
+
