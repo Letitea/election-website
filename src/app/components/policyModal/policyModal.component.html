@@ -8,7 +8,7 @@
   </div>
 </div>
 <div fxFlexFill class="modal-body">
-  <div fxFlexFill fxLayout="row wrap" style="padding: 0 15px 0 15px;" fxLayoutGap="30px">
+  <div fxHide fxShow.gt-xs fxFlexFill fxLayout="row wrap" style="padding: 0 15px 0 15px;" fxLayoutGap="30px">
     <div fxLayout="column" fxFlex="none" fxLayoutAlign="start start" fxLayoutGap="10px">
       <img style="border-radius: 24px;height: 318px;" [src]="policy.data[policy.index].img">
       <div style="font-weight: 400; font-size: 14px;line-height: 21px;color: #334155;">{{policy.data[policy.index].oriDescription}}</div>
@@ -38,6 +38,44 @@
             <div fxLayout="row" *ngIf="i!==policy.index">
               <div fxLayout="column" style="width: 244.33px;" fxFlex="none" fxLayoutAlign="start start">
                 <img style="border-radius: 8px;height: 134px;width: 244.33px;object-fit: cover;" [src]="policy.data[i].img">
+                <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">{{policy.data[i].oriDescription}}</div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxHide fxShow.xs fxFlexFill fxLayout="row wrap">
+    <div fxLayout="column" fxFlex="none" fxLayoutAlign="start start" fxLayoutGap="10px">
+      <img style="border-radius: 24px;width:330px;height: 251px;object-fit: cover;" [src]="policy.data[policy.index].img">
+      <div style="font-weight: 400; font-size: 14px;line-height: 21px;color: #334155;">{{policy.data[policy.index].oriDescription}}</div>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <div style="font-weight: 400;font-size: 16px;line-height: 24px;color: #334155;padding-right: 16px;">分享</div>
+        <i class="bi bi-facebook" style="font-size: 28px; color: #DA7D4A; padding-right: 16px;"></i>
+        <i class="bi bi-instagram" style="font-size: 28px; color: #DA7D4A; padding-right: 16px;"></i>
+        <i class="bi bi-line" style="font-size: 28px; color:#DA7D4A;padding-right: 16px;"></i>
+        <i class="bi bi-twitter" style="font-size: 28px; color:#DA7D4A;padding-right: 16px;"></i>
+      </div>
+    </div>
+    <div fxLayout="column" style="width: 100%;" fxLayoutAlign="start start">
+      <div style="font-weight: 700;font-size: 24px;line-height: 36px;color: #DA7D4A;">{{policy.data[policy.index].oriDescription}}</div>
+      <div style="font-weight: 400;font-size: 14px;line-height: 21px;color: #334155;padding-top: 30px;padding-bottom: 30px;">
+        <div style="font-weight: 700;font-size: 20px;line-height: 30px;color: #334155;">設立寵物醫療基金</div>
+        <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">每年撥款新台幣 10 億元，專款專用於支援家庭寵物的醫療費用</div>
+        <div style="font-weight: 700;font-size: 20px;line-height: 30px;color: #334155;padding-top: 20px;">提供醫療補助</div>
+        <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">每隻寵物每年可獲得高達新台幣 20,000 元的醫療補助，減輕飼主的經濟壓力</div>
+        <div style="font-weight: 700;font-size: 20px;line-height: 30px;color: #334155;padding-top: 20px;">合作動物醫院</div>
+        <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">目前已有和超過 200 家動物醫院進行初步的合作討論</div>
+      </div>
+      <div fxLayout="column" style="width: 100%; border-radius: 12px; padding: 16px; background-color: #F8FAFC;">
+
+        <div style="font-weight: 600;font-size: 16px;line-height: 19.36px;color: #334155;">更多政策議題</div>
+        <div fxLayout="column" fxFlex fxLayoutGap="20px" style="padding-top: 10px;">
+          <ng-container *ngFor="let data of policy.data;let i=index">
+            <div fxLayout="row" *ngIf="i!==policy.index">
+              <div fxLayout="row" style="width: 100%;" fxLayoutGap="10px" fxFlex="none" fxLayoutAlign="start start">
+                <img style="border-radius: 8px;height: 110px;width: 150px;object-fit: cover;" [src]="policy.data[i].img">
                 <div style="font-weight: 400; font-size: 16px;line-height: 24px;color: #334155;padding-top: 10px;">{{policy.data[i].oriDescription}}</div>
               </div>
             </div>
