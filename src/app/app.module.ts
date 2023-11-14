@@ -40,7 +40,7 @@ export function playerFactory() {
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatCardModule,
     CommonModule,
     FormsModule,

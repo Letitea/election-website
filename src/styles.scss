@@ -6,6 +6,44 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color:#F7ECE1 ; }
+// body[aos-delay='4000'] [aos], [aos][aos][aos-delay='4000']{
+//   transition-delay: 4000ms;
+// }
+// body[aos-delay='5000'] [aos], [aos][aos][aos-delay='5000']{
+//   transition-delay: 5000ms;
+// }
+// body[aos-delay='6000'] [aos], [aos][aos][aos-delay='6000']{
+//   transition-delay: 6000ms;
+// }
+// [data-aos] {
+//   visibility: hidden;
+// }
+
+// [data-aos].animated {
+//   visibility: visible;
+//   pointer-events: auto;
+// }
+
+// [data-aos] {
+//   @for $i from 1 through 60 {
+//     body[data-aos-delay='#{$i * 50}'] &,
+//     &[data-aos][data-aos-delay='#{$i * 50}'] {
+//       animation-delay: #{$i * 50}ms;
+
+//       &.aos-animate {
+//         animation-delay: #{$i * 50}ms;
+//       }
+//     }
+//   }
+// }
+// [data-aos] {
+//   @for $i from 1 through 60 {
+//     body[data-aos-duration='#{$i * 50}'] &,
+//     &[data-aos][data-aos-duration='#{$i * 50}'] {
+//       animation-duration: #{$i * 50}ms;
+//     }
+//   }
+// }
 @font-face {
   font-family: Mantou Sans;
   src: url(assets/MantouSans-Regular.ttf);

@@ -56,6 +56,7 @@ export class HomeComponent implements OnInit,AfterViewInit {
         });
       }
       thiss.destroyLoading=true;
+      // AOS.refresh();
     }, 3000);
   }
   animationCreated(animationItem: AnimationItem): void {
