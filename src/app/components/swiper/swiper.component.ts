@@ -50,7 +50,7 @@ export class SwiperComponent implements AfterViewInit {
       stretch: 0,
       depth: 150,
       modifier: 2,
-      slideShadows : false
+      slideShadows : true
     },
     pagination: {
       el: '.swiper-pagination',
