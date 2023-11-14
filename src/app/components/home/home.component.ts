@@ -52,11 +52,9 @@ export class HomeComponent implements OnInit,AfterViewInit {
       if(thiss.animationItem!==undefined && thiss.animationItem!==null){
         thiss.ngZone.runOutsideAngular(() => {
           thiss.animationItem.destroy();
-          //this.animationItem.destroy();
         });
       }
       thiss.destroyLoading=true;
-      // AOS.refresh();
     }, 3000);
   }
   animationCreated(animationItem: AnimationItem): void {

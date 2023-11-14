@@ -11,7 +11,6 @@ export class PolicyModalComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    console.log(this.policy)
   }
   closeModal(){
     this.activeModal.close();

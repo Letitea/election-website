@@ -38,18 +38,11 @@ export class SwiperComponent implements AfterViewInit {
   index = 1;
 
   swiperConfig2: SwiperOptions = {
-    // autoplay: {
-    //   delay: 600,
-    //   disableOnInteraction: false
-    // },
     speed: 800,
     loop: true,
     effect: 'coverflow',
     grabCursor: true,
     slidesPerView: 2,
-    // initialSlide: 1,
-    // cssMode:false,
-    // navigation:true,
     spaceBetween:40,
     centeredSlides: true,
     coverflowEffect: {
@@ -67,11 +60,7 @@ export class SwiperComponent implements AfterViewInit {
   constructor(private modalService: NgbModal,private changeDetectorRef: ChangeDetectorRef) { }
 
   ngAfterViewInit() {
-    // this.swiper.nativeElement.swiper.activeIndex = this.index;
     this.swiper.nativeElement.swiper.slideNext();
-    // this.changeDetectorRef.detectChanges();
-    // this.swiper.nativeElement.swiper.set
-    // this.swiperThumbs.nativeElement.swiper.activeIndex = this.index;
   }
 
   slideChange(swiper: any) {

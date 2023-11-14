@@ -11,7 +11,6 @@ export class NewActiveModalComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
-    // console.log(this.newActive)
   }
   closeModal(){
     this.activeModal.close();
